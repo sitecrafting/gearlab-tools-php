@@ -7,9 +7,10 @@ php:
 - hhvm
 before_install:
 - composer install
-# Install Swagger-generated dependencies separately
-- cd swagger/SwaggerClient-php && composer install
+# Install Swagger-generated dependencies separately,
+# but don't change directories in the main process
+- (cd swagger/SwaggerClient-php && composer install)
 script:
 - vendor/bin/phpunit
 # Test Swagger-generated code separately (using its own older version of PHPUnit)
-- cd swagger/SwaggerClient-php && vendor/bin/phpunit
+- swagger/SwaggerClient-php/vendor/bin/phpunit --configuration swagger/SwaggerClient-php/phpunit.xml.dist
