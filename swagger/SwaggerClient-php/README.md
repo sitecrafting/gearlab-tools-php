@@ -84,7 +84,6 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CompletionsApi* | [**completions**](docs/Api/CompletionsApi.md#completions) | **GET** /completions | 
 *SearchApi* | [**search**](docs/Api/SearchApi.md#search) | **GET** /search | Request pre-indexed search results
-*StuffApi* | [**search**](docs/Api/StuffApi.md#search) | **GET** /search | Request pre-indexed search results
 
 
 ## Documentation For Models
