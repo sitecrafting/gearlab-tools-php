@@ -4,7 +4,6 @@ php:
 - 7.1
 - 7.2
 - 7.3
-- hhvm
 before_install:
 - composer install
 # Install Swagger-generated dependencies separately,
@@ -14,3 +13,7 @@ script:
 - vendor/bin/phpunit
 # Test Swagger-generated code separately (using its own older version of PHPUnit)
 - swagger/SwaggerClient-php/vendor/bin/phpunit --configuration swagger/SwaggerClient-php/phpunit.xml.dist
+
+cache:
+  directories:
+  - $HOME/.cache/composer
