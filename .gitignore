@@ -1,2 +1,4 @@
 quick-test.php
-/vendor
+swagger/SwaggerClient-php/composer.lock
+# ignore any vendor directory anywhere in the tree
+vendor/

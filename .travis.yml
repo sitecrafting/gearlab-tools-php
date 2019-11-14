@@ -1,0 +1,15 @@
+language: php
+sudo: false
+php:
+- 7.1
+- 7.2
+- 7.3
+- hhvm
+before_install:
+- composer install
+# Install Swagger-generated dependencies separately
+- cd swagger/SwaggerClient-php && composer install
+script:
+- vendor/bin/phpunit
+# Test Swagger-generated code separately (using its own older version of PHPUnit)
+- cd swagger/SwaggerClient-php && vendor/bin/phpunit

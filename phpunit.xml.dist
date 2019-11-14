@@ -6,16 +6,9 @@
          convertWarningsToExceptions="true"
          stopOnFailure="false">
   <testsuites>
-    <testsuite>
-      <directory>./swagger/test/Api</directory>
-      <directory>./swagger/test/Model</directory>
+    <testsuite name="gearlab-tools-client">
+      <directory>./test</directory>
     </testsuite>
   </testsuites>
 
-  <filter>
-    <whitelist processUncoveredFilesFromWhitelist="true">
-      <directory suffix=".php">./swagger/lib/Api</directory>
-      <directory suffix=".php">./swagger/lib/Model</directory>
-    </whitelist>
-  </filter>
 </phpunit>

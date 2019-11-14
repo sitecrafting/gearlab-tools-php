@@ -23,14 +23,20 @@
         "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8",
+        "phpunit/phpunit": "^7.1",
         "squizlabs/php_codesniffer": "~2.6",
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "Swagger\\Client\\" : "swagger/lib/" }
+        "psr-4": {
+          "Swagger\\Client\\": "swagger/Swagger-Client-php/lib/",
+          "GearLab\\Api\\": "src/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "Swagger\\Client\\" : "swagger/test/" }
+        "psr-4": {
+          "Swagger\\Client\\" : "swagger/Swagger-Client-php/test/",
+          "GearLab\\Api\\": "test/"
+        }
     }
 }
