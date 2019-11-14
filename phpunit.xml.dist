@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="false">
+  <testsuites>
+    <testsuite>
+      <directory>./swagger/test/Api</directory>
+      <directory>./swagger/test/Model</directory>
+    </testsuite>
+  </testsuites>
+
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">./swagger/lib/Api</directory>
+      <directory suffix=".php">./swagger/lib/Model</directory>
+    </whitelist>
+  </filter>
+</phpunit>
