@@ -81,4 +81,26 @@ class ClientTest extends TestCase {
 
     $this->assertEquals('true', $params[6]);
   }
+
+  public function testGetCompletionsParams() {
+    $params = $this->client->getCompletionsParams([
+      'prefix' => 'spongeb',
+    ]);
+
+    $this->assertEquals([
+      'qwerty',
+      'spongeb',
+      1234,
+      '',
+    ], $params);
+  }
+
+  public function testGetCompletionsParamsMetaTag() {
+    $params = $this->client->getCompletionsParams([
+      'prefix'  => 'squarep',
+      'metaTag' => 'SO META',
+    ]);
+
+    $this->assertEquals('SO META', $params[3]);
+  }
 }

@@ -11,6 +11,7 @@ namespace GearLab\Api;
 
 use GuzzleHttp\Client as GuzzleClient;
 use Swagger\Client\Api;
+use Swagger\Client\Model;
 use Swagger\Client\Configuration;
 
 /**
@@ -159,6 +160,37 @@ class Client {
     ];
   }
 
+  public function completions(array $opts) : array {
+    // TODO break out into services
+    $client = new Api\CompletionsApi(
+      new GuzzleClient(),
+      (new Configuration())->setHost($this->baseUri)
+    );
+    $response = call_user_func_array(
+      [$client, 'completions'],
+      $this->getCompletionsParams($opts)
+    );
+
+    // drill down into the cruft
+    $resultSet = $response->getResSet() ?? null;
+
+    if (empty($resultSet)) {
+      return [];
+    }
+
+    // map result wrapper objects to arrays
+    $results = array_map(function(Model\CompletionsResultWrapper $wrapper) : array {
+      $result = $wrapper->getRes();
+      return [
+        'title' => $result->getTitle(),
+      ];
+    }, $resultSet->getResults());
+
+    return [
+      'results' => $results,
+    ];
+  }
+
   /**
    * Filter the search $opts into a positional array to be passed to the
    * underlying Swagger client.
@@ -177,6 +209,20 @@ class Client {
       (int) ($opts['resLength'] ?? 10),
       (string) ($opts['metaTag'] ?? ''),
       $literal,
+    ];
+  }
+
+  /**
+   * Filter the completions $opts into a positional array to be passed to the
+   * underlying Swagger client.
+   *
+   */
+  public function getCompletionsParams(array $opts) : array {
+    return [
+      $this->key,
+      'spongeb',
+      $this->collection,
+      (string) ($opts['metaTag'] ?? ''),
     ];
   }
 }
