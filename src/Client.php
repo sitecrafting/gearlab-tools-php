@@ -125,7 +125,7 @@ class Client {
     $wrappedRecommendations = $resultSet->getRecommendations();
     // NOTE: we are stripping out suggestions from the result data
 
-    $searchResults = array_map(function($wrapper) {
+    $searchResults = array_map(function(Model\SearchResultWrapper $wrapper) : array {
       $result = $wrapper->getRes();
       return [
         'url'     => $result->getUrl(),
@@ -135,7 +135,7 @@ class Client {
       ];
     }, $wrappedResults);
 
-    $recommendations = array_map(function($wrapper) {
+    $recommendations = array_map(function(object $wrapper) : array {
       $recommendation = $wrapper->getRes();
       return [
         'url'     => $recommendation->getUrl(),
