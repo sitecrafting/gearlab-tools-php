@@ -45,13 +45,10 @@ class Client {
     $this->baseUri    = $opts['baseUri'];
     $this->collection = $opts['collection'];
 
-    $config = $opts['swaggerConfig'] ?? new Configuration();
-    $config->setHost($this->baseUri);
+    $this->config = $opts['swaggerConfig'] ?? new Configuration();
+    $this->config->setHost($this->baseUri);
 
-    $this->swaggerClient = $opts['swaggerClient'] ?? new Api\SearchApi(
-      new GuzzleClient(),
-      $config
-    );
+    $this->guzzleClient = $opts['guzzleClient'] ?? new GuzzleClient();
   }
 
   /**
@@ -110,7 +107,7 @@ class Client {
    */
   public function search(array $opts) : array {
     $response = call_user_func_array(
-      [$this->swaggerClient, 'search'],
+      [$this->getService('search'), 'search'],
       $this->getSearchParams($opts)
     );
 
@@ -161,13 +158,8 @@ class Client {
   }
 
   public function completions(array $opts) : array {
-    // TODO break out into services
-    $client = new Api\CompletionsApi(
-      new GuzzleClient(),
-      (new Configuration())->setHost($this->baseUri)
-    );
     $response = call_user_func_array(
-      [$client, 'completions'],
+      [$this->getService('completions'), 'completions'],
       $this->getCompletionsParams($opts)
     );
 
@@ -224,5 +216,19 @@ class Client {
       $this->collection,
       (string) ($opts['metaTag'] ?? ''),
     ];
+  }
+
+  protected function getService(string $name) : object {
+    $services = [
+      'search'      => Api\SearchApi::class,
+      'completions' => Api\CompletionsApi::class,
+    ];
+
+    if (empty($services[$name])) {
+      throw new \InvalidArgumentException('no such service: ' . $name);
+    }
+    $class = $services[$name];
+
+    return new $class($this->guzzleClient, $this->config);
   }
 }
