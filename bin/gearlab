@@ -5,7 +5,12 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
 use GearLab\Api\Cli\SearchCommand;
+use GearLab\Api\Cli\CompletionsCommand;
+
+// TODO should this go somewhere else?
+define('DEFAULT_BASE_URI', 'https://stg.search-api-gateway.aws.gearlabnw.net');
 
 $app = new Application();
 $app->add(new SearchCommand());
+$app->add(new CompletionsCommand());
 $app->run();

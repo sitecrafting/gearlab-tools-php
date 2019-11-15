@@ -20,23 +20,18 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Central class for the `gearlab` CLI command
  */
-class SearchCommand extends Command {
+class CompletionsCommand extends Command {
   protected $client;
 
   public function configure() {
-    $this->setName('search')
+    $this->setName('completions')
       ->setDescription('Performs a search query against the GearLab Tools API')
-      ->addArgument('query', InputArgument::REQUIRED, 'The search query')
+      ->addArgument('prefix', InputArgument::REQUIRED, 'The search prefix to get completions for')
       ->addOption(
         'key',
         'k',
         InputOption::VALUE_REQUIRED,
         'Your GearLab Tools API key'
-      )->addOption(
-        'collection',
-        'c',
-        InputOption::VALUE_REQUIRED,
-        'Your collection ID'
       )->addOption(
         'base-uri',
         'b',
@@ -44,39 +39,24 @@ class SearchCommand extends Command {
         'The base URI of the REST service to query',
         DEFAULT_BASE_URI
       )->addOption(
-        'offset',
-        'O',
-        InputOption::VALUE_OPTIONAL,
-        'resOffset to pass to the API',
-        0
-      )->addOption(
-        'count',
-        'C',
-        InputOption::VALUE_OPTIONAL,
-        'resLength to pass to the API',
-        10
+        'collection',
+        'c',
+        InputOption::VALUE_REQUIRED,
+        'Your collection ID'
       )->addOption(
         'meta-tag',
         'M',
         InputOption::VALUE_OPTIONAL,
         'metaTag to pass to the API'
-      )->addOption(
-        'literal',
-        'L',
-        InputOption::VALUE_NONE,
-        'whether to set literalQuery when querying the API'
       );
   }
 
   public function execute(InputInterface $in, OutputInterface $out) {
     $client = $this->getClient($in);
 
-    $response = $client->search([
-      'query'        => $in->getArgument('query'),
-      'resOffset'    => $in->getOption('offset'),
-      'resLength'    => $in->getOption('count'),
-      'metaTag'      => $in->getOption('meta-tag'),
-      'literalQuery' => $in->getOption('literal'),
+    $response = $client->completions([
+      'prefix'  => $in->getArgument('prefix'),
+      'metaTag' => $in->getOption('meta-tag'),
     ]);
 
     // TODO output formats
