@@ -34,9 +34,85 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// TODO
+// key, baseUri, and collection are all required.
+$client = new Client([
+  'key'        => $in->getOption('key'),
+  'baseUri'    => $in->getOption('base-uri'),
+  'collection' => $in->getOption('collection'),
+]);
+
+$searchResults = $client->search([
+  'query'        => 'trees',   // required
+  'resOffset'    => 10,        // defaults to 0
+  'resLength'    => 42,        // defaults to 10
+  'metaTag'      => 'SO-META', // defaults to ""
+  'literalQuery' => true,      // defaults to false
+]);
+
+$searchCompletions = $client->completions([
+  'prefix'  => 'spongeb',
+  'metaTag' => 'SO-META', // defaults to ""
+]);
 
 ?>
+```
+
+### Example Results
+
+#### Search
+
+```json
+{
+  "resSet": [
+    {
+      "results": [
+        {
+          "res": {
+            "url": "https://www.example.com/cocoa-policy/",
+            "title": "Hot Cocoa Policy",
+            "snippet": "In the wake of last year's hot cocoa incident, we've decided that all drinks served at the holiday party must be machine washable.",
+            "meta": {}
+          }
+        }
+      ],
+      "recommendations": [
+        {
+          "res": {
+            "url": "https://www.example.com/cocoa-policy/",
+            "title": "Hot Cocoa Policy",
+            "snippet": "In the wake of last year's hot cocoa incident, we've decided that all drinks served at the holiday party must be machine washable.",
+            "meta": {}
+          }
+        }
+      ],
+      "resOffset": 20,
+      "resStart": 21,
+      "resEnd": 30,
+      "resCount": 10,
+      "total": 47,
+      "literalQuery": "false",
+      "originalQueryPhrase": "holiday party",
+      "suggestionSupersededQuery": "false",
+      "supersedingSuggestion": "corrected spelling"
+    }
+  ]
+}
+```
+
+#### Completions
+
+```json
+{
+  "resSet": {
+    "results": [
+      {
+        "res": {
+          "title": "Support Number"
+        }
+      }
+    ]
+  }
+}
 ```
 
 ## Architecture
