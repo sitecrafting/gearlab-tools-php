@@ -171,7 +171,7 @@ class Client {
 
     return [
       $this->key,
-      'trees',
+      (string) ($opts['query'] ?? ''),
       $this->collection,
       (int) ($opts['resOffset'] ?? 0),
       (int) ($opts['resLength'] ?? 10),

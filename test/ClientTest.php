@@ -25,12 +25,12 @@ class ClientTest extends TestCase {
 
   public function testGetSearchParams() {
     $params = $this->client->getSearchParams([
-      'query' => 'trees',
+      'query' => 'spongebob squarepants',
     ]);
 
     $this->assertEquals([
       'qwerty',
-      'trees',
+      'spongebob squarepants',
       1234,
       0,
       10,
