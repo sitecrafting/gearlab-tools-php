@@ -7,7 +7,7 @@ use Symfony\Component\Console\Application;
 use GearLab\Api\Cli\SearchCommand;
 use GearLab\Api\Cli\CompletionsCommand;
 
-// TODO should this go somewhere else?
+// Default to talking to the staging environment
 define('DEFAULT_BASE_URI', 'https://stg.search-api-gateway.aws.gearlabnw.net');
 
 $app = new Application();

@@ -25,7 +25,7 @@ class CompletionsCommand extends Command {
 
   public function configure() {
     $this->setName('completions')
-      ->setDescription('Performs a search query against the GearLab Tools API')
+      ->setDescription('Performs a completions query against the GearLab Tools API')
       ->addArgument('prefix', InputArgument::REQUIRED, 'The search prefix to get completions for')
       ->addOption(
         'key',
@@ -64,6 +64,7 @@ class CompletionsCommand extends Command {
   }
 
   protected function getClient(InputInterface $in) : Client {
+    // memoize client so we only have to instantiate it once
     if (!$this->client) {
       $this->client = new Client([
         'key'        => $in->getOption('key'),
