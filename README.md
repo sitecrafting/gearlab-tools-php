@@ -62,57 +62,138 @@ $searchCompletions = $client->completions([
 #### Search
 
 ```json
-{
-  "resSet": [
-    {
-      "results": [
-        {
-          "res": {
-            "url": "https://www.example.com/cocoa-policy/",
-            "title": "Hot Cocoa Policy",
-            "snippet": "In the wake of last year's hot cocoa incident, we've decided that all drinks served at the holiday party must be machine washable.",
-            "meta": {}
-          }
-        }
-      ],
-      "recommendations": [
-        {
-          "res": {
-            "url": "https://www.example.com/cocoa-policy/",
-            "title": "Hot Cocoa Policy",
-            "snippet": "In the wake of last year's hot cocoa incident, we've decided that all drinks served at the holiday party must be machine washable.",
-            "meta": {}
-          }
-        }
-      ],
-      "resOffset": 20,
-      "resStart": 21,
-      "resEnd": 30,
-      "resCount": 10,
-      "total": 47,
-      "literalQuery": "false",
-      "originalQueryPhrase": "holiday party",
-      "suggestionSupersededQuery": "false",
-      "supersedingSuggestion": "corrected spelling"
-    }
-  ]
-}
+array (
+  'results' =>
+  array (
+    0 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/civic-area/trees-in-the-civic-area-2',
+      'title' => 'Trees in the Civic Area',
+      'snippet' => 'Updates on plans for trees in the Boulder Civic Area.',
+      'meta' =>
+      array (
+      ),
+    ),
+    1 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/forestry/best-trees',
+      'title' => 'Best Trees for Boulder',
+      'snippet' => 'Select the right tree for the right place.',
+      'meta' =>
+      array (
+      ),
+    ),
+    2 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/planning/university-hill-street-trees-improvements',
+      'title' => 'University Hill - Street Trees Improvements',
+      'snippet' => 'PROJECT COMPLETED IN OCTOBER 2016! TOTAL FUNDS = $520,000',
+      'meta' =>
+      array (
+      ),
+    ),
+    3 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/forestry/tree-crisis-2',
+      'title' => 'Boulder\'s Tree Crisis 2019',
+      'snippet' => 'Our ash trees are under attack. Emerald Ash Borer (EAB), an invasive beetle from Asia, is killing Boulder\'s ash trees.',
+      'meta' =>
+      array (
+      ),
+    ),
+    4 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/newsroom/tree-work-scheduled-nov-1-and-nov-2-for-scott-carpenter-park-parking-lot',
+      'title' => 'Tree Work Scheduled Nov. 1 and Nov. 2 for Scott Carpenter Park Parking Lot',
+      'snippet' => 'The project team consulted with city foresters and the new parking lot design incorporates, where possible, existing trees determined to be in good condition.',
+      'meta' =>
+      array (
+      ),
+    ),
+    5 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/forestry/pledge',
+      'title' => 'Pledge to Tree-Imagine Boulder',
+      'snippet' => 'Together, let\'s Tree-Imagine Boulder! Take the pledge to help Boulder\'s trees.',
+      'meta' =>
+      array (
+      ),
+    ),
+    6 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/forestry/slackline',
+      'title' => 'Slacklining',
+      'snippet' => 'Information for slacklining in Boulder',
+      'meta' =>
+      array (
+      ),
+    ),
+    7 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/forestry/what-you-can-do',
+      'title' => 'What You Can Do',
+      'snippet' => 'Here are the 5 most important actions you can take ',
+      'meta' =>
+      array (
+      ),
+    ),
+    8 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/forestry/emerald-ash-borer',
+      'title' => 'Emerald Ash Borer Overview',
+      'snippet' => 'Learn more about Emerald Ash Borer\'s presence in Boulder and what you can do about it. EAB is a federally quarantined, invasive tree pest.',
+      'meta' =>
+      array (
+      ),
+    ),
+    9 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/forestry/apps',
+      'title' => 'Forestry and Parks Web Apps and Maps!',
+      'snippet' => 'Forestry Apps and Maps',
+      'meta' =>
+      array (
+      ),
+    ),
+  ),
+  'recommendations' =>
+  array (
+    0 =>
+    array (
+      'url' => 'https://bouldercolorado.gov/open-data/city-of-boulder-public-trees/',
+      'title' => 'Public Trees',
+      'snippet' => 'Public Trees managed by the Urban Forestry Division of the Department of Parks and Recreation, City of Boulder. The provided tree data does not include trees on Open Space and Mountain Parks (OSMP) land. City ordinances prohibit the picking of fruit on trees located on OSMP property. For a list of u',
+      'meta' => NULL,
+    ),
+  ),
+  'resOffset' => 0,
+  'resCount' => 10,
+  'resStart' => 1,
+  'resEnd' => 10,
+  'total' => 110,
+  'literalQuery' => false,
+  'originalQueryPhrase' => 'trees',
+  'suggestionSupersededQuery' => false,
+  'supersedingSuggestion' => '',
+)
 ```
 
 #### Completions
 
 ```json
-{
-  "resSet": {
-    "results": [
-      {
-        "res": {
-          "title": "Support Number"
-        }
-      }
-    ]
-  }
-}
+array (
+  'results' =>
+  array (
+    0 =>
+    array (
+      'title' => 'Spongebob Squarepants',
+    ),
+    1 =>
+    array (
+      'title' => 'Spongebill Roundhat',
+    ),
+  ),
+)
 ```
 
 ## Architecture
