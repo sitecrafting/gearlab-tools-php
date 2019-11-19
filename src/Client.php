@@ -118,8 +118,8 @@ class Client {
       return [];
     }
 
-    $wrappedResults         = $resultSet->getResults();
-    $wrappedRecommendations = $resultSet->getRecommendations();
+    $wrappedResults         = $resultSet->getResults() ?: [];
+    $wrappedRecommendations = $resultSet->getRecommendations() ?: [];
     // NOTE: we are stripping out suggestions from the result data
 
     $searchResults = array_map(function(Model\SearchResultWrapper $wrapper) : array {
@@ -176,7 +176,7 @@ class Client {
       return [
         'title' => $result->getTitle(),
       ];
-    }, $resultSet->getResults());
+    }, $resultSet->getResults() ?: []);
 
     return [
       'results' => $results,
