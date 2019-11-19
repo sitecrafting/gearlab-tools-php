@@ -4,11 +4,20 @@
 
 The official PHP SDK for the GearLab Tools REST API.
 
+## Contents
+
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Tests](#tests)
+* [Getting Started](#getting-started)
+* [Command Line Interface](#command-line-interface)
+* [Architecture](#architecture)
+
 ## Requirements
 
-PHP 7.1 and later
+PHP 7.1 or later
 
-## Installation & Usage
+## Installation
 ### Composer
 
 Install via Composer:
