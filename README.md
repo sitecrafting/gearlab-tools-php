@@ -101,60 +101,9 @@ array (
       array (
       ),
     ),
-    3 =>
-    array (
-      'url' => 'https://bouldercolorado.gov/forestry/tree-crisis-2',
-      'title' => 'Boulder\'s Tree Crisis 2019',
-      'snippet' => 'Our ash trees are under attack. Emerald Ash Borer (EAB), an invasive beetle from Asia, is killing Boulder\'s ash trees.',
-      'meta' =>
-      array (
-      ),
-    ),
-    4 =>
-    array (
-      'url' => 'https://bouldercolorado.gov/newsroom/tree-work-scheduled-nov-1-and-nov-2-for-scott-carpenter-park-parking-lot',
-      'title' => 'Tree Work Scheduled Nov. 1 and Nov. 2 for Scott Carpenter Park Parking Lot',
-      'snippet' => 'The project team consulted with city foresters and the new parking lot design incorporates, where possible, existing trees determined to be in good condition.',
-      'meta' =>
-      array (
-      ),
-    ),
-    5 =>
-    array (
-      'url' => 'https://bouldercolorado.gov/forestry/pledge',
-      'title' => 'Pledge to Tree-Imagine Boulder',
-      'snippet' => 'Together, let\'s Tree-Imagine Boulder! Take the pledge to help Boulder\'s trees.',
-      'meta' =>
-      array (
-      ),
-    ),
-    6 =>
-    array (
-      'url' => 'https://bouldercolorado.gov/forestry/slackline',
-      'title' => 'Slacklining',
-      'snippet' => 'Information for slacklining in Boulder',
-      'meta' =>
-      array (
-      ),
-    ),
-    7 =>
-    array (
-      'url' => 'https://bouldercolorado.gov/forestry/what-you-can-do',
-      'title' => 'What You Can Do',
-      'snippet' => 'Here are the 5 most important actions you can take ',
-      'meta' =>
-      array (
-      ),
-    ),
-    8 =>
-    array (
-      'url' => 'https://bouldercolorado.gov/forestry/emerald-ash-borer',
-      'title' => 'Emerald Ash Borer Overview',
-      'snippet' => 'Learn more about Emerald Ash Borer\'s presence in Boulder and what you can do about it. EAB is a federally quarantined, invasive tree pest.',
-      'meta' =>
-      array (
-      ),
-    ),
+
+    /* ... */
+
     9 =>
     array (
       'url' => 'https://bouldercolorado.gov/forestry/apps',
