@@ -92,15 +92,6 @@ array (
       array (
       ),
     ),
-    2 =>
-    array (
-      'url' => 'https://bouldercolorado.gov/planning/university-hill-street-trees-improvements',
-      'title' => 'University Hill - Street Trees Improvements',
-      'snippet' => 'PROJECT COMPLETED IN OCTOBER 2016! TOTAL FUNDS = $520,000',
-      'meta' =>
-      array (
-      ),
-    ),
 
     /* ... */
 
