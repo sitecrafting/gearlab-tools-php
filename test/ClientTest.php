@@ -84,12 +84,12 @@ class ClientTest extends TestCase {
 
   public function testGetCompletionsParams() {
     $params = $this->client->getCompletionsParams([
-      'prefix' => 'spongeb',
+      'prefix' => 'pneu',
     ]);
 
     $this->assertEquals([
       'qwerty',
-      'spongeb',
+      'pneu',
       1234,
       '',
     ], $params);

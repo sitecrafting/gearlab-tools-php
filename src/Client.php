@@ -212,7 +212,7 @@ class Client {
   public function getCompletionsParams(array $opts) : array {
     return [
       $this->key,
-      'spongeb',
+      $opts['prefix'] ?? '',
       $this->collection,
       (string) ($opts['metaTag'] ?? ''),
     ];
