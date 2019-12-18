@@ -11,6 +11,7 @@ namespace GearLab\Api;
 
 use GuzzleHttp\Client as GuzzleClient;
 use Swagger\Client\Api;
+use Swagger\Client\ApiException;
 use Swagger\Client\Model;
 use Swagger\Client\Configuration;
 
@@ -110,6 +111,10 @@ class Client {
       [$this->getService('search'), 'search'],
       $this->getSearchParams($opts)
     );
+
+    if (empty($response)) {
+      throw new ApiException('Empty or invalid response from search endpoint');
+    }
 
     // drill down into the cruft
     $resultSet = $response->getResSet()[0] ?? null;
