@@ -59,7 +59,7 @@ class Client {
    * parameters. Keys are named exactly as they are in the REST API
    * docs. `key` and `collection` are passed via the constructor. `query` is
    * required; all others are optional.
-   * @return array an array like:
+   * @return array if `query` is set in `$opts`, returns an array like:
    * ```
    * array (
    *  'results' =>
@@ -105,8 +105,13 @@ class Client {
    *  'supersedingSuggestion' => '',
    * )
    * ```
+   * Otherwise, if `query` is not set, returns an empty array.
    */
   public function search(array $opts) : array {
+    if (empty($opts['query'])) {
+      return [];
+    }
+
     $response = call_user_func_array(
       [$this->getService('search'), 'search'],
       $this->getSearchParams($opts)

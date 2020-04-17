@@ -23,6 +23,13 @@ class ClientTest extends TestCase {
     ]);
   }
 
+  public function testEmptySearchQuery() {
+    $this->assertEquals([], $this->client->search([]));
+    $this->assertEquals([], $this->client->search([
+      'query' => ''
+    ]));
+  }
+
   public function testGetSearchParams() {
     $params = $this->client->getSearchParams([
       'query' => 'spongebob squarepants',
