@@ -39,6 +39,7 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit",
+        "test-gen": "swagger/SwaggerClient-php/vendor/bin/phpunit --configuration swagger/SwaggerClient-php/phpunit.xml.dist"
     }
 }
