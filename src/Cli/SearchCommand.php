@@ -81,6 +81,8 @@ class SearchCommand extends Command {
 
     // TODO output formats
     $out->write(json_encode($response, JSON_PRETTY_PRINT));
+
+    return 0;
   }
 
   protected function getClient(InputInterface $in) : Client {
