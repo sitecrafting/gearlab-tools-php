@@ -1,6 +1,6 @@
 # Swagger\Client\CompletionsApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/ctamayo/gearlab-tools/v2*
+All URIs are relative to *https://virtserver.swaggerhub.com/ctamayo/gearlab-tools/v2.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

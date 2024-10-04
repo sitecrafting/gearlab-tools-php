@@ -1,6 +1,6 @@
 <?php
 /**
- * SearchResult
+ * CuratedResultFieldsInner
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * SearchResult Class Doc Comment
+ * CuratedResultFieldsInner Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SearchResult implements ModelInterface, ArrayAccess
+class CuratedResultFieldsInner implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class SearchResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SearchResult';
+    protected static $swaggerModelName = 'CuratedResult_fields_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,10 +56,9 @@ class SearchResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'url' => 'string',
-        'title' => 'string',
-        'snippet' => 'string',
-        'meta' => 'object'
+        'type' => 'string',
+        'order' => 'int',
+        'value' => 'object[]'
     ];
 
     /**
@@ -68,10 +67,9 @@ class SearchResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'url' => null,
-        'title' => null,
-        'snippet' => null,
-        'meta' => null
+        'type' => null,
+        'order' => null,
+        'value' => null
     ];
 
     /**
@@ -101,10 +99,9 @@ class SearchResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
-        'title' => 'title',
-        'snippet' => 'snippet',
-        'meta' => 'meta'
+        'type' => 'type',
+        'order' => 'order',
+        'value' => 'value'
     ];
 
     /**
@@ -113,10 +110,9 @@ class SearchResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-        'title' => 'setTitle',
-        'snippet' => 'setSnippet',
-        'meta' => 'setMeta'
+        'type' => 'setType',
+        'order' => 'setOrder',
+        'value' => 'setValue'
     ];
 
     /**
@@ -125,10 +121,9 @@ class SearchResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-        'title' => 'getTitle',
-        'snippet' => 'getSnippet',
-        'meta' => 'getMeta'
+        'type' => 'getType',
+        'order' => 'getOrder',
+        'value' => 'getValue'
     ];
 
     /**
@@ -191,10 +186,9 @@ class SearchResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['snippet'] = isset($data['snippet']) ? $data['snippet'] : null;
-        $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -206,15 +200,6 @@ class SearchResult implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['url'] === null) {
-            $invalidProperties[] = "'url' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['snippet'] === null) {
-            $invalidProperties[] = "'snippet' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -231,97 +216,73 @@ class SearchResult implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets url
+     * Gets type
      *
      * @return string
      */
-    public function getUrl()
+    public function getType()
     {
-        return $this->container['url'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets url
+     * Sets type
      *
-     * @param string $url Your page's URL to link to from the search results
+     * @param string $type type of field e.g. headline, link, button.. the list will grow over time
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setType($type)
     {
-        $this->container['url'] = $url;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets title
+     * Gets order
      *
-     * @return string
+     * @return int
      */
-    public function getTitle()
+    public function getOrder()
     {
-        return $this->container['title'];
+        return $this->container['order'];
     }
 
     /**
-     * Sets title
+     * Sets order
      *
-     * @param string $title The title to show for you page when it shows up in search results
+     * @param int $order field order in which the field should be rendered in.
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setOrder($order)
     {
-        $this->container['title'] = $title;
+        $this->container['order'] = $order;
 
         return $this;
     }
 
     /**
-     * Gets snippet
+     * Gets value
      *
-     * @return string
+     * @return object[]
      */
-    public function getSnippet()
+    public function getValue()
     {
-        return $this->container['snippet'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets snippet
+     * Sets value
      *
-     * @param string $snippet The title to show for you page when it shows up in search results
+     * @param object[] $value value
      *
      * @return $this
      */
-    public function setSnippet($snippet)
+    public function setValue($value)
     {
-        $this->container['snippet'] = $snippet;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return object
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param object $meta Extra information about this search result
-     *
-     * @return $this
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
+        $this->container['value'] = $value;
 
         return $this;
     }

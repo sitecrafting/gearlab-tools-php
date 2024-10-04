@@ -1,6 +1,6 @@
 <?php
 /**
- * SearchResult
+ * CuratedResultInner
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * SearchResult Class Doc Comment
+ * CuratedResultInner Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SearchResult implements ModelInterface, ArrayAccess
+class CuratedResultInner implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class SearchResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SearchResult';
+    protected static $swaggerModelName = 'CuratedResult_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,10 +56,8 @@ class SearchResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'url' => 'string',
-        'title' => 'string',
-        'snippet' => 'string',
-        'meta' => 'object'
+        'template' => 'string',
+        'fields' => '\Swagger\Client\Model\CuratedResultFields'
     ];
 
     /**
@@ -68,10 +66,8 @@ class SearchResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'url' => null,
-        'title' => null,
-        'snippet' => null,
-        'meta' => null
+        'template' => null,
+        'fields' => null
     ];
 
     /**
@@ -101,10 +97,8 @@ class SearchResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
-        'title' => 'title',
-        'snippet' => 'snippet',
-        'meta' => 'meta'
+        'template' => 'template',
+        'fields' => 'fields'
     ];
 
     /**
@@ -113,10 +107,8 @@ class SearchResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-        'title' => 'setTitle',
-        'snippet' => 'setSnippet',
-        'meta' => 'setMeta'
+        'template' => 'setTemplate',
+        'fields' => 'setFields'
     ];
 
     /**
@@ -125,10 +117,8 @@ class SearchResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-        'title' => 'getTitle',
-        'snippet' => 'getSnippet',
-        'meta' => 'getMeta'
+        'template' => 'getTemplate',
+        'fields' => 'getFields'
     ];
 
     /**
@@ -191,10 +181,8 @@ class SearchResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['snippet'] = isset($data['snippet']) ? $data['snippet'] : null;
-        $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
+        $this->container['template'] = isset($data['template']) ? $data['template'] : null;
+        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
     }
 
     /**
@@ -206,15 +194,6 @@ class SearchResult implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['url'] === null) {
-            $invalidProperties[] = "'url' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['snippet'] === null) {
-            $invalidProperties[] = "'snippet' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -231,97 +210,49 @@ class SearchResult implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets url
+     * Gets template
      *
      * @return string
      */
-    public function getUrl()
+    public function getTemplate()
     {
-        return $this->container['url'];
+        return $this->container['template'];
     }
 
     /**
-     * Sets url
+     * Sets template
      *
-     * @param string $url Your page's URL to link to from the search results
+     * @param string $template Machine name of the curated result item
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setTemplate($template)
     {
-        $this->container['url'] = $url;
+        $this->container['template'] = $template;
 
         return $this;
     }
 
     /**
-     * Gets title
+     * Gets fields
      *
-     * @return string
+     * @return \Swagger\Client\Model\CuratedResultFields
      */
-    public function getTitle()
+    public function getFields()
     {
-        return $this->container['title'];
+        return $this->container['fields'];
     }
 
     /**
-     * Sets title
+     * Sets fields
      *
-     * @param string $title The title to show for you page when it shows up in search results
+     * @param \Swagger\Client\Model\CuratedResultFields $fields fields
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setFields($fields)
     {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets snippet
-     *
-     * @return string
-     */
-    public function getSnippet()
-    {
-        return $this->container['snippet'];
-    }
-
-    /**
-     * Sets snippet
-     *
-     * @param string $snippet The title to show for you page when it shows up in search results
-     *
-     * @return $this
-     */
-    public function setSnippet($snippet)
-    {
-        $this->container['snippet'] = $snippet;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return object
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param object $meta Extra information about this search result
-     *
-     * @return $this
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
+        $this->container['fields'] = $fields;
 
         return $this;
     }

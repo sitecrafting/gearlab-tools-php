@@ -1,6 +1,6 @@
 <?php
 /**
- * CompletionsResponseResSetTest
+ * CuratedResultInnerTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * CompletionsResponseResSetTest Class Doc Comment
+ * CuratedResultInnerTest Class Doc Comment
  *
  * @category    Class
- * @description CompletionsResponseResSet
+ * @description CuratedResultInner
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CompletionsResponseResSetTest extends \PHPUnit_Framework_TestCase
+class CuratedResultInnerTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,16 +69,23 @@ class CompletionsResponseResSetTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CompletionsResponseResSet"
+     * Test "CuratedResultInner"
      */
-    public function testCompletionsResponseResSet()
+    public function testCuratedResultInner()
     {
     }
 
     /**
-     * Test attribute "results"
+     * Test attribute "template"
      */
-    public function testPropertyResults()
+    public function testPropertyTemplate()
+    {
+    }
+
+    /**
+     * Test attribute "fields"
+     */
+    public function testPropertyFields()
     {
     }
 }

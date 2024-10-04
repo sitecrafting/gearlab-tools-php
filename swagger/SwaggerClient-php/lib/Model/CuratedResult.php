@@ -1,6 +1,6 @@
 <?php
 /**
- * SearchResult
+ * CuratedResult
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * SearchResult Class Doc Comment
+ * CuratedResult Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SearchResult implements ModelInterface, ArrayAccess
+class CuratedResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class SearchResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SearchResult';
+    protected static $swaggerModelName = 'CuratedResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,10 +56,7 @@ class SearchResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'url' => 'string',
-        'title' => 'string',
-        'snippet' => 'string',
-        'meta' => 'object'
+        
     ];
 
     /**
@@ -68,10 +65,7 @@ class SearchResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'url' => null,
-        'title' => null,
-        'snippet' => null,
-        'meta' => null
+        
     ];
 
     /**
@@ -101,10 +95,7 @@ class SearchResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
-        'title' => 'title',
-        'snippet' => 'snippet',
-        'meta' => 'meta'
+        
     ];
 
     /**
@@ -113,10 +104,7 @@ class SearchResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-        'title' => 'setTitle',
-        'snippet' => 'setSnippet',
-        'meta' => 'setMeta'
+        
     ];
 
     /**
@@ -125,10 +113,7 @@ class SearchResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-        'title' => 'getTitle',
-        'snippet' => 'getSnippet',
-        'meta' => 'getMeta'
+        
     ];
 
     /**
@@ -191,10 +176,6 @@ class SearchResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['snippet'] = isset($data['snippet']) ? $data['snippet'] : null;
-        $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
     }
 
     /**
@@ -204,17 +185,8 @@ class SearchResult implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['url'] === null) {
-            $invalidProperties[] = "'url' can't be null";
-        }
-        if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
-        }
-        if ($this->container['snippet'] === null) {
-            $invalidProperties[] = "'snippet' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -229,102 +201,6 @@ class SearchResult implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string $url Your page's URL to link to from the search results
-     *
-     * @return $this
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title The title to show for you page when it shows up in search results
-     *
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets snippet
-     *
-     * @return string
-     */
-    public function getSnippet()
-    {
-        return $this->container['snippet'];
-    }
-
-    /**
-     * Sets snippet
-     *
-     * @param string $snippet The title to show for you page when it shows up in search results
-     *
-     * @return $this
-     */
-    public function setSnippet($snippet)
-    {
-        $this->container['snippet'] = $snippet;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return object
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param object $meta Extra information about this search result
-     *
-     * @return $this
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
