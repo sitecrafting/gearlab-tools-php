@@ -19,6 +19,17 @@ use Swagger\Client\Configuration;
  * Central API client for the GearLab Tools REST service
  */
 class Client {
+
+  public $key;
+
+  public $baseUri;
+
+  public $collection;
+
+  public $config;
+
+  public $guzzleClient;
+
   /**
    * Constructor. Expects an array with configuration data, inluded the
    * GearLab Tools API key and collection number.
