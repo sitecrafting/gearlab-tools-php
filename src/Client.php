@@ -138,9 +138,11 @@ class Client {
     if (empty($resultSet)) {
       return [];
     }
-
+    
     $wrappedResults         = $resultSet->getResults() ?: [];
     $wrappedRecommendations = $resultSet->getRecommendations() ?: [];
+    $curatedResults         = $resultSet->getCuratedResults() ?: [];
+    
     // NOTE: we are stripping out suggestions from the result data
 
     $searchResults = array_map(function(Model\SearchResultWrapper $wrapper) : array {
@@ -166,6 +168,9 @@ class Client {
     return [
       'results'                   => $searchResults,
       'recommendations'           => $recommendations,
+      'curatedResults'            => $curatedResults,
+      'curatedResultsEnabled'     => $resultSet->getCuratedResultsEnabled() !== 'false',
+      'curatedResultsVersion'     => $resultSet->getCuratedResultsVersion(),
       'resOffset'                 => $resultSet->getResOffset(),
       'resCount'                  => $resultSet->getResCount(),
       'resStart'                  => $resultSet->getResStart(),

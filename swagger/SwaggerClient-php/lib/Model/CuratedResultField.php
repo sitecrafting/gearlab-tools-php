@@ -1,6 +1,6 @@
 <?php
 /**
- * CuratedResultFields
+ * CuratedResultField
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * CuratedResultFields Class Doc Comment
+ * CuratedResultField Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CuratedResultFields implements ModelInterface, ArrayAccess
+class CuratedResultField implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class CuratedResultFields implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CuratedResult_fields';
+    protected static $swaggerModelName = 'CuratedResult_field';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class CuratedResultFields implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+        'type' => 'string',
+        'order' => 'int',
+        'value' => 'object[]'
     ];
 
     /**
@@ -65,7 +67,9 @@ class CuratedResultFields implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
+        'type' => null,
+        'order' => null,
+        'value' => null
     ];
 
     /**
@@ -95,7 +99,9 @@ class CuratedResultFields implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'type' => 'type',
+        'order' => 'order',
+        'value' => 'value'
     ];
 
     /**
@@ -104,7 +110,9 @@ class CuratedResultFields implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+        'type' => 'setType',
+        'order' => 'setOrder',
+        'value' => 'setValue'
     ];
 
     /**
@@ -113,7 +121,9 @@ class CuratedResultFields implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+        'type' => 'getType',
+        'order' => 'getOrder',
+        'value' => 'getValue'
     ];
 
     /**
@@ -176,6 +186,9 @@ class CuratedResultFields implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -201,6 +214,78 @@ class CuratedResultFields implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type of field e.g. headline, link, button.. the list will grow over time
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets order
+     *
+     * @return int
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     *
+     * @param int $order field order in which the field should be rendered in.
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->container['order'] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return object[]
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param object[] $value value
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

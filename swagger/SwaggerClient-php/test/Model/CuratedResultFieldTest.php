@@ -1,6 +1,6 @@
 <?php
 /**
- * CuratedResultFieldsTest
+ * CuratedResultFieldTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * CuratedResultFieldsTest Class Doc Comment
+ * CuratedResultFieldTest Class Doc Comment
  *
  * @category    Class
- * @description CuratedResultFields
+ * @description CuratedResultField
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CuratedResultFieldsTest extends \PHPUnit_Framework_TestCase
+class CuratedResultFieldTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,9 +69,30 @@ class CuratedResultFieldsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CuratedResultFields"
+     * Test "CuratedResultField"
      */
-    public function testCuratedResultFields()
+    public function testCuratedResultField()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "order"
+     */
+    public function testPropertyOrder()
+    {
+    }
+
+    /**
+     * Test attribute "value"
+     */
+    public function testPropertyValue()
     {
     }
 }

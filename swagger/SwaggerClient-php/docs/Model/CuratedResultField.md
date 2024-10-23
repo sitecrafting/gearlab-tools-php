@@ -1,4 +1,4 @@
-# CuratedResultFieldsInner
+# CuratedResultField
 
 ## Properties
 Name | Type | Description | Notes

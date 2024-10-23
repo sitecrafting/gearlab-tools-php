@@ -56,7 +56,8 @@ class CuratedResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+        'template' => 'string',
+        'fields' => '\Swagger\Client\Model\CuratedResultField[]'
     ];
 
     /**
@@ -65,7 +66,8 @@ class CuratedResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
+        'template' => null,
+        'fields' => null
     ];
 
     /**
@@ -95,7 +97,8 @@ class CuratedResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'template' => 'template',
+        'fields' => 'fields'
     ];
 
     /**
@@ -104,7 +107,8 @@ class CuratedResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+        'template' => 'setTemplate',
+        'fields' => 'setFields'
     ];
 
     /**
@@ -113,7 +117,8 @@ class CuratedResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+        'template' => 'getTemplate',
+        'fields' => 'getFields'
     ];
 
     /**
@@ -176,6 +181,8 @@ class CuratedResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['template'] = isset($data['template']) ? $data['template'] : null;
+        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
     }
 
     /**
@@ -201,6 +208,54 @@ class CuratedResult implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets template
+     *
+     * @return string
+     */
+    public function getTemplate()
+    {
+        return $this->container['template'];
+    }
+
+    /**
+     * Sets template
+     *
+     * @param string $template Machine name of the curated result item
+     *
+     * @return $this
+     */
+    public function setTemplate($template)
+    {
+        $this->container['template'] = $template;
+
+        return $this;
+    }
+
+    /**
+     * Gets fields
+     *
+     * @return \Swagger\Client\Model\CuratedResultField[]
+     */
+    public function getFields()
+    {
+        return $this->container['fields'];
+    }
+
+    /**
+     * Sets fields
+     *
+     * @param \Swagger\Client\Model\CuratedResultField[] $fields fields
+     *
+     * @return $this
+     */
+    public function setFields($fields)
+    {
+        $this->container['fields'] = $fields;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

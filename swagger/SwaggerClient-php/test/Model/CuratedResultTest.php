@@ -74,4 +74,18 @@ class CuratedResultTest extends \PHPUnit_Framework_TestCase
     public function testCuratedResult()
     {
     }
+
+    /**
+     * Test attribute "template"
+     */
+    public function testPropertyTemplate()
+    {
+    }
+
+    /**
+     * Test attribute "fields"
+     */
+    public function testPropertyFields()
+    {
+    }
 }

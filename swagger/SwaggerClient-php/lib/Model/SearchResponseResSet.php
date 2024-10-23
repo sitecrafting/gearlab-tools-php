@@ -67,9 +67,9 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
         'original_query_phrase' => 'string',
         'suggestion_superseded_query' => 'string',
         'superseding_suggestion' => 'string',
-        'curated_results_enabled' => 'bool',
+        'curated_results_enabled' => 'string',
         'curated_results_version' => 'string',
-        'curated_results' => '\Swagger\Client\Model\CuratedResult'
+        'curated_results' => '\Swagger\Client\Model\CuratedResult[]'
     ];
 
     /**
@@ -226,6 +226,8 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
     const LITERAL_QUERY_TRUE = 'true';
     const SUGGESTION_SUPERSEDED_QUERY_FALSE = 'false';
     const SUGGESTION_SUPERSEDED_QUERY_TRUE = 'true';
+    const CURATED_RESULTS_ENABLED_FALSE = 'false';
+    const CURATED_RESULTS_ENABLED_TRUE = 'true';
     
 
     
@@ -252,6 +254,19 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
         return [
             self::SUGGESTION_SUPERSEDED_QUERY_FALSE,
             self::SUGGESTION_SUPERSEDED_QUERY_TRUE,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCuratedResultsEnabledAllowableValues()
+    {
+        return [
+            self::CURATED_RESULTS_ENABLED_FALSE,
+            self::CURATED_RESULTS_ENABLED_TRUE,
         ];
     }
     
@@ -308,6 +323,14 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
         if (!is_null($this->container['suggestion_superseded_query']) && !in_array($this->container['suggestion_superseded_query'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'suggestion_superseded_query', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getCuratedResultsEnabledAllowableValues();
+        if (!is_null($this->container['curated_results_enabled']) && !in_array($this->container['curated_results_enabled'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'curated_results_enabled', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -612,7 +635,7 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
     /**
      * Gets curated_results_enabled
      *
-     * @return bool
+     * @return string
      */
     public function getCuratedResultsEnabled()
     {
@@ -622,12 +645,21 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
     /**
      * Sets curated_results_enabled
      *
-     * @param bool $curated_results_enabled toggle to indicate if the curated results are enables for the account
+     * @param string $curated_results_enabled toggle to indicate if the curated results are enables for the account
      *
      * @return $this
      */
     public function setCuratedResultsEnabled($curated_results_enabled)
     {
+        $allowedValues = $this->getCuratedResultsEnabledAllowableValues();
+        if (!is_null($curated_results_enabled) && !in_array($curated_results_enabled, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'curated_results_enabled', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['curated_results_enabled'] = $curated_results_enabled;
 
         return $this;
@@ -660,7 +692,7 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
     /**
      * Gets curated_results
      *
-     * @return \Swagger\Client\Model\CuratedResult
+     * @return \Swagger\Client\Model\CuratedResult[]
      */
     public function getCuratedResults()
     {
@@ -670,7 +702,7 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
     /**
      * Sets curated_results
      *
-     * @param \Swagger\Client\Model\CuratedResult $curated_results curated_results
+     * @param \Swagger\Client\Model\CuratedResult[] $curated_results curated_results
      *
      * @return $this
      */
