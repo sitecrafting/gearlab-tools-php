@@ -114,10 +114,92 @@ class Client {
    *  'originalQueryPhrase' => 'trees',
    *  'suggestionSupersededQuery' => false,
    *  'supersedingSuggestion' => '',
+   *  'suggestionSupersededQuery': 'false',
+   *   'supersedingSuggestion': '',
+   *   'recommendations': [
+   *     {
+   *       'res': {
+   *         'url': 'https://demo.sitkainsights.com/top-5-php-template-engines',
+   *         'title': 'Top 5 PHP Template Engines | Article | SiteCrafting',
+   *         'snippet': 'We set out to compare 5 different PHP template engines in order to find one that best suits our needs and can be adopted as a company-wide standard.'
+   *       }
+   *     }
+   *   ],
+   *   'curatedResultsEnabled': 'true',
+   *   'curatedResultsVersion': '2.0',
+   *   'curatedResults': [
+   *     {
+   *       'template': 'quick_links',
+   *       'fields': [
+   *         {
+   *           'type': 'link',
+   *           'order': 0,
+   *           'value': [
+   *             {
+   *               'link_text': 'Check out this PHP blog',
+   *               'url': 'www.sitecrafting.com',
+   *               'new_window': '1'
+   *             },
+   *             {
+   *               'link_text': 'Main Site',
+   *               'url': 'https://www.sitecrafting.com',
+   *               'new_window': '1'
+   *             }
+   *           ]
+   *         },
+   *         {
+   *           'type': 'text',
+   *           'order': 1,
+   *           'value': [
+   *             {
+   *               'text': 'Please don't believe everything you read on the internet. '
+   *             }
+   *           ]
+   *         },
+   *         {
+   *           'type': 'button',
+   *           'order': 2,
+   *           'value': [
+   *             {
+   *               'link_text': 'Google Something',
+   *               'url': 'https://www.google.com'
+   *             }
+   *           ]
+   *         },
+   *         {
+   *           'type': 'headline',
+   *           'order': 3,
+   *           'value': [{ 'headline': 'PHP information' }]
+   *         }
+   *       ]
+   *     },
+   *     {
+   *       'template': 'quick_links',
+   *       'fields': [
+   *         { 'type': 'link', 'order': 0, 'value': [] },
+   *         {
+   *           'type': 'text',
+   *           'order': 1,
+   *           'value': [
+   *             { 'text': 'Here is the text that goes under the headline.' }
+   *           ]
+   *         },
+   *         { 'type': 'button', 'order': 2, 'value': [] },
+   *         {
+   *           'type': 'headline',
+   *           'order': 3,
+   *           'value': [
+   *             { 'headline': 'This result only has a headline & text' }
+   *           ]
+   *         }
+   *       ]
+   *     }
+   *   ]
+   * }
    * )
    * ```
    * Otherwise, if `query` is not set, returns an empty array.
-   */
+   */   
   public function search(array $opts) : array {
     if (empty($opts['query'])) {
       return [];
