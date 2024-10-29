@@ -1,6 +1,6 @@
 # Swagger\Client\SearchApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/ctamayo/gearlab-tools/v2*
+All URIs are relative to *https://virtserver.swaggerhub.com/ctamayo/gearlab-tools/v3.0.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

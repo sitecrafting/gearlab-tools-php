@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **original_query_phrase** | **string** | the search query originally entered by the end-user | [optional] 
 **suggestion_superseded_query** | **string** | whether an alternate search term (e.g. a corrected misspelling) overrode the current query with high certainty | [optional] 
 **superseding_suggestion** | **string** | if an alternate search term overrode the end-user&#39;s original query, this will contain the search term with which it was overridden | [optional] 
+**curated_results_enabled** | **string** | toggle to indicate if the curated results are enables for the account | [optional] 
+**curated_results_version** | **string** | String indicating the version of the curated results that are appended to the resSet. Might be phased out in the future. | [optional] 
+**curated_results** | [**\Swagger\Client\Model\CuratedResult[]**](CuratedResult.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

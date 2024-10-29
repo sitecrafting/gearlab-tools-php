@@ -1,6 +1,6 @@
 <?php
 /**
- * SearchResultTest
+ * CuratedResultTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * SearchResultTest Class Doc Comment
+ * CuratedResultTest Class Doc Comment
  *
  * @category    Class
- * @description SearchResult
+ * @description CuratedResult
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SearchResultTest extends \PHPUnit_Framework_TestCase
+class CuratedResultTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,37 +69,23 @@ class SearchResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SearchResult"
+     * Test "CuratedResult"
      */
-    public function testSearchResult()
+    public function testCuratedResult()
     {
     }
 
     /**
-     * Test attribute "url"
+     * Test attribute "template"
      */
-    public function testPropertyUrl()
+    public function testPropertyTemplate()
     {
     }
 
     /**
-     * Test attribute "title"
+     * Test attribute "fields"
      */
-    public function testPropertyTitle()
-    {
-    }
-
-    /**
-     * Test attribute "snippet"
-     */
-    public function testPropertySnippet()
-    {
-    }
-
-    /**
-     * Test attribute "meta"
-     */
-    public function testPropertyMeta()
+    public function testPropertyFields()
     {
     }
 }

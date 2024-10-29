@@ -1,6 +1,6 @@
 <?php
 /**
- * CompletionsResponseResSet
+ * CuratedResult
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * CompletionsResponseResSet Class Doc Comment
+ * CuratedResult Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CompletionsResponseResSet implements ModelInterface, ArrayAccess
+class CuratedResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CompletionsResponse_resSet';
+    protected static $swaggerModelName = 'CuratedResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\CompletionsResultWrapper[]'
+        'template' => 'string',
+        'fields' => '\Swagger\Client\Model\CuratedResultField[]'
     ];
 
     /**
@@ -65,7 +66,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'results' => null
+        'template' => null,
+        'fields' => null
     ];
 
     /**
@@ -95,7 +97,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'template' => 'template',
+        'fields' => 'fields'
     ];
 
     /**
@@ -104,7 +107,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'template' => 'setTemplate',
+        'fields' => 'setFields'
     ];
 
     /**
@@ -113,7 +117,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'template' => 'getTemplate',
+        'fields' => 'getFields'
     ];
 
     /**
@@ -176,7 +181,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['template'] = isset($data['template']) ? $data['template'] : null;
+        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
     }
 
     /**
@@ -204,25 +210,49 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets results
+     * Gets template
      *
-     * @return \Swagger\Client\Model\CompletionsResultWrapper[]
+     * @return string
      */
-    public function getResults()
+    public function getTemplate()
     {
-        return $this->container['results'];
+        return $this->container['template'];
     }
 
     /**
-     * Sets results
+     * Sets template
      *
-     * @param \Swagger\Client\Model\CompletionsResultWrapper[] $results results
+     * @param string $template Machine name of the curated result item
      *
      * @return $this
      */
-    public function setResults($results)
+    public function setTemplate($template)
     {
-        $this->container['results'] = $results;
+        $this->container['template'] = $template;
+
+        return $this;
+    }
+
+    /**
+     * Gets fields
+     *
+     * @return \Swagger\Client\Model\CuratedResultField[]
+     */
+    public function getFields()
+    {
+        return $this->container['fields'];
+    }
+
+    /**
+     * Sets fields
+     *
+     * @param \Swagger\Client\Model\CuratedResultField[] $fields fields
+     *
+     * @return $this
+     */
+    public function setFields($fields)
+    {
+        $this->container['fields'] = $fields;
 
         return $this;
     }

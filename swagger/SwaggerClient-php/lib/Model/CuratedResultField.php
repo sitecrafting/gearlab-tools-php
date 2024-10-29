@@ -1,6 +1,6 @@
 <?php
 /**
- * CompletionsResponseResSet
+ * CuratedResultField
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * CompletionsResponseResSet Class Doc Comment
+ * CuratedResultField Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CompletionsResponseResSet implements ModelInterface, ArrayAccess
+class CuratedResultField implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CompletionsResponse_resSet';
+    protected static $swaggerModelName = 'CuratedResult_field';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\CompletionsResultWrapper[]'
+        'type' => 'string',
+        'order' => 'int',
+        'value' => 'object[]'
     ];
 
     /**
@@ -65,7 +67,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'results' => null
+        'type' => null,
+        'order' => null,
+        'value' => null
     ];
 
     /**
@@ -95,7 +99,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'type' => 'type',
+        'order' => 'order',
+        'value' => 'value'
     ];
 
     /**
@@ -104,7 +110,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'type' => 'setType',
+        'order' => 'setOrder',
+        'value' => 'setValue'
     ];
 
     /**
@@ -113,7 +121,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'type' => 'getType',
+        'order' => 'getOrder',
+        'value' => 'getValue'
     ];
 
     /**
@@ -176,7 +186,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -204,25 +216,73 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets results
+     * Gets type
      *
-     * @return \Swagger\Client\Model\CompletionsResultWrapper[]
+     * @return string
      */
-    public function getResults()
+    public function getType()
     {
-        return $this->container['results'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets results
+     * Sets type
      *
-     * @param \Swagger\Client\Model\CompletionsResultWrapper[] $results results
+     * @param string $type type of field e.g. headline, link, button.. the list will grow over time
      *
      * @return $this
      */
-    public function setResults($results)
+    public function setType($type)
     {
-        $this->container['results'] = $results;
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets order
+     *
+     * @return int
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     *
+     * @param int $order field order in which the field should be rendered in.
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->container['order'] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return object[]
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param object[] $value value
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
 
         return $this;
     }
