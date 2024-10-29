@@ -19,7 +19,7 @@ use Swagger\Client\Configuration;
  * Central API client for the GearLab Tools REST service
  */
 class Client {
-  
+
   public $key;
 
   public $baseUri;
