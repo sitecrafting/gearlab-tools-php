@@ -15,7 +15,10 @@ use PHPUnit\Framework\TestCase;
  * Tests for the GearLab\Api\Client class
  */
 class ClientTest extends TestCase {
-  public function setUp() {
+
+  protected Client $client;
+
+  public function setUp(): void {
     $this->client = new Client([
       'key' => 'qwerty',
       'baseUri' => 'https://fake.sitecrafting.net',
