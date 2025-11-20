@@ -1,6 +1,6 @@
 <?php
 /**
- * SearchResultWrapperTest
+ * AISearchResultFeedbackLabelsTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * SearchResultWrapperTest Class Doc Comment
+ * AISearchResultFeedbackLabelsTest Class Doc Comment
  *
  * @category    Class
- * @description SearchResultWrapper
+ * @description AISearchResultFeedbackLabels
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SearchResultWrapperTest extends \PHPUnit_Framework_TestCase
+class AISearchResultFeedbackLabelsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,16 +69,30 @@ class SearchResultWrapperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SearchResultWrapper"
+     * Test "AISearchResultFeedbackLabels"
      */
-    public function testSearchResultWrapper()
+    public function testAISearchResultFeedbackLabels()
     {
     }
 
     /**
-     * Test attribute "res"
+     * Test attribute "label_text"
      */
-    public function testPropertyRes()
+    public function testPropertyLabelText()
+    {
+    }
+
+    /**
+     * Test attribute "sentiment_name"
+     */
+    public function testPropertySentimentName()
+    {
+    }
+
+    /**
+     * Test attribute "label_id"
+     */
+    public function testPropertyLabelId()
     {
     }
 }

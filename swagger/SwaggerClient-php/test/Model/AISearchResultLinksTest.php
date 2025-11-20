@@ -1,6 +1,6 @@
 <?php
 /**
- * SearchResultWrapperTest
+ * AISearchResultLinksTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * SearchResultWrapperTest Class Doc Comment
+ * AISearchResultLinksTest Class Doc Comment
  *
  * @category    Class
- * @description SearchResultWrapper
+ * @description AISearchResultLinks
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SearchResultWrapperTest extends \PHPUnit_Framework_TestCase
+class AISearchResultLinksTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,16 +69,23 @@ class SearchResultWrapperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SearchResultWrapper"
+     * Test "AISearchResultLinks"
      */
-    public function testSearchResultWrapper()
+    public function testAISearchResultLinks()
     {
     }
 
     /**
-     * Test attribute "res"
+     * Test attribute "title"
      */
-    public function testPropertyRes()
+    public function testPropertyTitle()
+    {
+    }
+
+    /**
+     * Test attribute "url"
+     */
+    public function testPropertyUrl()
     {
     }
 }
