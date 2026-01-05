@@ -95,4 +95,18 @@ class AISearchResultTest extends \PHPUnit_Framework_TestCase
     public function testPropertyFeedbackLabels()
     {
     }
+
+    /**
+     * Test attribute "success"
+     */
+    public function testPropertySuccess()
+    {
+    }
+
+    /**
+     * Test attribute "status_message"
+     */
+    public function testPropertyStatusMessage()
+    {
+    }
 }

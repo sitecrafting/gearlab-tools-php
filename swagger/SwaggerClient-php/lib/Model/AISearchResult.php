@@ -58,7 +58,9 @@ class AISearchResult implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'ai_text' => 'string',
         'links' => '\Swagger\Client\Model\AISearchResultLinks[]',
-        'feedback_labels' => '\Swagger\Client\Model\AISearchResultFeedbackLabels[]'
+        'feedback_labels' => '\Swagger\Client\Model\AISearchResultFeedbackLabels[]',
+        'success' => 'bool',
+        'status_message' => 'string'
     ];
 
     /**
@@ -69,7 +71,9 @@ class AISearchResult implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'ai_text' => null,
         'links' => null,
-        'feedback_labels' => null
+        'feedback_labels' => null,
+        'success' => null,
+        'status_message' => null
     ];
 
     /**
@@ -101,7 +105,9 @@ class AISearchResult implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'ai_text' => 'aiText',
         'links' => 'links',
-        'feedback_labels' => 'feedbackLabels'
+        'feedback_labels' => 'feedbackLabels',
+        'success' => 'success',
+        'status_message' => 'statusMessage'
     ];
 
     /**
@@ -112,7 +118,9 @@ class AISearchResult implements ModelInterface, ArrayAccess
     protected static $setters = [
         'ai_text' => 'setAiText',
         'links' => 'setLinks',
-        'feedback_labels' => 'setFeedbackLabels'
+        'feedback_labels' => 'setFeedbackLabels',
+        'success' => 'setSuccess',
+        'status_message' => 'setStatusMessage'
     ];
 
     /**
@@ -123,7 +131,9 @@ class AISearchResult implements ModelInterface, ArrayAccess
     protected static $getters = [
         'ai_text' => 'getAiText',
         'links' => 'getLinks',
-        'feedback_labels' => 'getFeedbackLabels'
+        'feedback_labels' => 'getFeedbackLabels',
+        'success' => 'getSuccess',
+        'status_message' => 'getStatusMessage'
     ];
 
     /**
@@ -189,6 +199,8 @@ class AISearchResult implements ModelInterface, ArrayAccess
         $this->container['ai_text'] = isset($data['ai_text']) ? $data['ai_text'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['feedback_labels'] = isset($data['feedback_labels']) ? $data['feedback_labels'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['status_message'] = isset($data['status_message']) ? $data['status_message'] : null;
     }
 
     /**
@@ -283,6 +295,54 @@ class AISearchResult implements ModelInterface, ArrayAccess
     public function setFeedbackLabels($feedback_labels)
     {
         $this->container['feedback_labels'] = $feedback_labels;
+
+        return $this;
+    }
+
+    /**
+     * Gets success
+     *
+     * @return bool
+     */
+    public function getSuccess()
+    {
+        return $this->container['success'];
+    }
+
+    /**
+     * Sets success
+     *
+     * @param bool $success success
+     *
+     * @return $this
+     */
+    public function setSuccess($success)
+    {
+        $this->container['success'] = $success;
+
+        return $this;
+    }
+
+    /**
+     * Gets status_message
+     *
+     * @return string
+     */
+    public function getStatusMessage()
+    {
+        return $this->container['status_message'];
+    }
+
+    /**
+     * Sets status_message
+     *
+     * @param string $status_message status_message
+     *
+     * @return $this
+     */
+    public function setStatusMessage($status_message)
+    {
+        $this->container['status_message'] = $status_message;
 
         return $this;
     }
