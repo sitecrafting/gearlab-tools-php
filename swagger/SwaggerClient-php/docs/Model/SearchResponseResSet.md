@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **curated_results_version** | **string** | String indicating the version of the curated results that are appended to the resSet. Might be phased out in the future. | [optional] 
 **curated_results** | [**\Swagger\Client\Model\CuratedResult[]**](CuratedResult.md) |  | [optional] 
 **ai_result** | [**\Swagger\Client\Model\AISearchResult**](AISearchResult.md) |  | [optional] 
+**query_log_id** | **int** | The Id of the Query Log record for the search. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

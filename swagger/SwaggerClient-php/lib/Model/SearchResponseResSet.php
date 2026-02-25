@@ -70,7 +70,8 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
         'curated_results_enabled' => 'string',
         'curated_results_version' => 'string',
         'curated_results' => '\Swagger\Client\Model\CuratedResult[]',
-        'ai_result' => '\Swagger\Client\Model\AISearchResult'
+        'ai_result' => '\Swagger\Client\Model\AISearchResult',
+        'query_log_id' => 'int'
     ];
 
     /**
@@ -93,7 +94,8 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
         'curated_results_enabled' => null,
         'curated_results_version' => null,
         'curated_results' => null,
-        'ai_result' => null
+        'ai_result' => null,
+        'query_log_id' => null
     ];
 
     /**
@@ -137,7 +139,8 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
         'curated_results_enabled' => 'curatedResultsEnabled',
         'curated_results_version' => 'curatedResultsVersion',
         'curated_results' => 'curatedResults',
-        'ai_result' => 'aiResult'
+        'ai_result' => 'aiResult',
+        'query_log_id' => 'queryLogId'
     ];
 
     /**
@@ -160,7 +163,8 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
         'curated_results_enabled' => 'setCuratedResultsEnabled',
         'curated_results_version' => 'setCuratedResultsVersion',
         'curated_results' => 'setCuratedResults',
-        'ai_result' => 'setAiResult'
+        'ai_result' => 'setAiResult',
+        'query_log_id' => 'setQueryLogId'
     ];
 
     /**
@@ -183,7 +187,8 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
         'curated_results_enabled' => 'getCuratedResultsEnabled',
         'curated_results_version' => 'getCuratedResultsVersion',
         'curated_results' => 'getCuratedResults',
-        'ai_result' => 'getAiResult'
+        'ai_result' => 'getAiResult',
+        'query_log_id' => 'getQueryLogId'
     ];
 
     /**
@@ -306,6 +311,7 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
         $this->container['curated_results_version'] = isset($data['curated_results_version']) ? $data['curated_results_version'] : null;
         $this->container['curated_results'] = isset($data['curated_results']) ? $data['curated_results'] : null;
         $this->container['ai_result'] = isset($data['ai_result']) ? $data['ai_result'] : null;
+        $this->container['query_log_id'] = isset($data['query_log_id']) ? $data['query_log_id'] : null;
     }
 
     /**
@@ -739,6 +745,30 @@ class SearchResponseResSet implements ModelInterface, ArrayAccess
     public function setAiResult($ai_result)
     {
         $this->container['ai_result'] = $ai_result;
+
+        return $this;
+    }
+
+    /**
+     * Gets query_log_id
+     *
+     * @return int
+     */
+    public function getQueryLogId()
+    {
+        return $this->container['query_log_id'];
+    }
+
+    /**
+     * Sets query_log_id
+     *
+     * @param int $query_log_id The Id of the Query Log record for the search.
+     *
+     * @return $this
+     */
+    public function setQueryLogId($query_log_id)
+    {
+        $this->container['query_log_id'] = $query_log_id;
 
         return $this;
     }

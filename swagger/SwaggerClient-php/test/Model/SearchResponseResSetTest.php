@@ -179,4 +179,11 @@ class SearchResponseResSetTest extends \PHPUnit_Framework_TestCase
     public function testPropertyAiResult()
     {
     }
+
+    /**
+     * Test attribute "query_log_id"
+     */
+    public function testPropertyQueryLogId()
+    {
+    }
 }
