@@ -225,6 +225,7 @@ class Client {
     $wrappedRecommendations = $resultSet->getRecommendations() ?: [];
     $curatedResults         = $resultSet->getCuratedResults() ?: [];
     $aiResult               = $resultSet->getAiResult() ? : [];
+    $queryLogId             = $resultSet->getQueryLogId() ? : [];
     
     // NOTE: we are stripping out suggestions from the result data
 
@@ -264,6 +265,7 @@ class Client {
       'suggestionSupersededQuery' => $resultSet->getSuggestionSupersededQuery() !== 'false',
       'supersedingSuggestion'     => $resultSet->getSupersedingSuggestion(),
       'aiResult'                  => $aiResult,
+      'queryLogId'                => $queryLogId,
     ];
   }
 
