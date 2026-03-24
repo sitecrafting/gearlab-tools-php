@@ -1,6 +1,6 @@
 <?php
 /**
- * CompletionsResponseResSet
+ * AISearchResultLinks
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * CompletionsResponseResSet Class Doc Comment
+ * AISearchResultLinks Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CompletionsResponseResSet implements ModelInterface, ArrayAccess
+class AISearchResultLinks implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CompletionsResponse_resSet';
+    protected static $swaggerModelName = 'AISearchResult_links';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\CompletionsResultWrapper[]'
+        'title' => 'string',
+        'url' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'results' => null
+        'title' => null,
+        'url' => null
     ];
 
     /**
@@ -95,7 +97,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'title' => 'title',
+        'url' => 'url'
     ];
 
     /**
@@ -104,7 +107,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'title' => 'setTitle',
+        'url' => 'setUrl'
     ];
 
     /**
@@ -113,7 +117,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'title' => 'getTitle',
+        'url' => 'getUrl'
     ];
 
     /**
@@ -176,7 +181,8 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
 
     /**
@@ -204,25 +210,49 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets results
+     * Gets title
      *
-     * @return \Swagger\Client\Model\CompletionsResultWrapper[]
+     * @return string
      */
-    public function getResults()
+    public function getTitle()
     {
-        return $this->container['results'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets results
+     * Sets title
      *
-     * @param \Swagger\Client\Model\CompletionsResultWrapper[] $results results
+     * @param string $title The Title of the page in the result.
      *
      * @return $this
      */
-    public function setResults($results)
+    public function setTitle($title)
     {
-        $this->container['results'] = $results;
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string $url The URL for the page result.
+     *
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * CompletionsResponseResSet
+ * AISearchResult
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * CompletionsResponseResSet Class Doc Comment
+ * AISearchResult Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CompletionsResponseResSet implements ModelInterface, ArrayAccess
+class AISearchResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CompletionsResponse_resSet';
+    protected static $swaggerModelName = 'AISearchResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,11 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\CompletionsResultWrapper[]'
+        'ai_text' => 'string',
+        'links' => '\Swagger\Client\Model\AISearchResultLinks[]',
+        'feedback_labels' => '\Swagger\Client\Model\AISearchResultFeedbackLabels[]',
+        'success' => 'bool',
+        'status_message' => 'string'
     ];
 
     /**
@@ -65,7 +69,11 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'results' => null
+        'ai_text' => null,
+        'links' => null,
+        'feedback_labels' => null,
+        'success' => null,
+        'status_message' => null
     ];
 
     /**
@@ -95,7 +103,11 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'ai_text' => 'aiText',
+        'links' => 'links',
+        'feedback_labels' => 'feedbackLabels',
+        'success' => 'success',
+        'status_message' => 'statusMessage'
     ];
 
     /**
@@ -104,7 +116,11 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'ai_text' => 'setAiText',
+        'links' => 'setLinks',
+        'feedback_labels' => 'setFeedbackLabels',
+        'success' => 'setSuccess',
+        'status_message' => 'setStatusMessage'
     ];
 
     /**
@@ -113,7 +129,11 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'ai_text' => 'getAiText',
+        'links' => 'getLinks',
+        'feedback_labels' => 'getFeedbackLabels',
+        'success' => 'getSuccess',
+        'status_message' => 'getStatusMessage'
     ];
 
     /**
@@ -176,7 +196,11 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['ai_text'] = isset($data['ai_text']) ? $data['ai_text'] : null;
+        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['feedback_labels'] = isset($data['feedback_labels']) ? $data['feedback_labels'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['status_message'] = isset($data['status_message']) ? $data['status_message'] : null;
     }
 
     /**
@@ -204,25 +228,121 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets results
+     * Gets ai_text
      *
-     * @return \Swagger\Client\Model\CompletionsResultWrapper[]
+     * @return string
      */
-    public function getResults()
+    public function getAiText()
     {
-        return $this->container['results'];
+        return $this->container['ai_text'];
     }
 
     /**
-     * Sets results
+     * Sets ai_text
      *
-     * @param \Swagger\Client\Model\CompletionsResultWrapper[] $results results
+     * @param string $ai_text The AI-generated text that is intended to provide information for the user's query.
      *
      * @return $this
      */
-    public function setResults($results)
+    public function setAiText($ai_text)
     {
-        $this->container['results'] = $results;
+        $this->container['ai_text'] = $ai_text;
+
+        return $this;
+    }
+
+    /**
+     * Gets links
+     *
+     * @return \Swagger\Client\Model\AISearchResultLinks[]
+     */
+    public function getLinks()
+    {
+        return $this->container['links'];
+    }
+
+    /**
+     * Sets links
+     *
+     * @param \Swagger\Client\Model\AISearchResultLinks[] $links links
+     *
+     * @return $this
+     */
+    public function setLinks($links)
+    {
+        $this->container['links'] = $links;
+
+        return $this;
+    }
+
+    /**
+     * Gets feedback_labels
+     *
+     * @return \Swagger\Client\Model\AISearchResultFeedbackLabels[]
+     */
+    public function getFeedbackLabels()
+    {
+        return $this->container['feedback_labels'];
+    }
+
+    /**
+     * Sets feedback_labels
+     *
+     * @param \Swagger\Client\Model\AISearchResultFeedbackLabels[] $feedback_labels feedback_labels
+     *
+     * @return $this
+     */
+    public function setFeedbackLabels($feedback_labels)
+    {
+        $this->container['feedback_labels'] = $feedback_labels;
+
+        return $this;
+    }
+
+    /**
+     * Gets success
+     *
+     * @return bool
+     */
+    public function getSuccess()
+    {
+        return $this->container['success'];
+    }
+
+    /**
+     * Sets success
+     *
+     * @param bool $success success
+     *
+     * @return $this
+     */
+    public function setSuccess($success)
+    {
+        $this->container['success'] = $success;
+
+        return $this;
+    }
+
+    /**
+     * Gets status_message
+     *
+     * @return string
+     */
+    public function getStatusMessage()
+    {
+        return $this->container['status_message'];
+    }
+
+    /**
+     * Sets status_message
+     *
+     * @param string $status_message status_message
+     *
+     * @return $this
+     */
+    public function setStatusMessage($status_message)
+    {
+        $this->container['status_message'] = $status_message;
 
         return $this;
     }

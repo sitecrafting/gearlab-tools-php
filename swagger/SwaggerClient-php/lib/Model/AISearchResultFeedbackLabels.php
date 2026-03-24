@@ -1,6 +1,6 @@
 <?php
 /**
- * CompletionsResponseResSet
+ * AISearchResultFeedbackLabels
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * CompletionsResponseResSet Class Doc Comment
+ * AISearchResultFeedbackLabels Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CompletionsResponseResSet implements ModelInterface, ArrayAccess
+class AISearchResultFeedbackLabels implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CompletionsResponse_resSet';
+    protected static $swaggerModelName = 'AISearchResult_feedbackLabels';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'results' => '\Swagger\Client\Model\CompletionsResultWrapper[]'
+        'label_text' => 'string',
+        'sentiment_name' => 'string',
+        'label_id' => 'int'
     ];
 
     /**
@@ -65,7 +67,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'results' => null
+        'label_text' => null,
+        'sentiment_name' => null,
+        'label_id' => null
     ];
 
     /**
@@ -95,7 +99,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'results' => 'results'
+        'label_text' => 'labelText',
+        'sentiment_name' => 'sentimentName',
+        'label_id' => 'labelId'
     ];
 
     /**
@@ -104,7 +110,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'results' => 'setResults'
+        'label_text' => 'setLabelText',
+        'sentiment_name' => 'setSentimentName',
+        'label_id' => 'setLabelId'
     ];
 
     /**
@@ -113,7 +121,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'results' => 'getResults'
+        'label_text' => 'getLabelText',
+        'sentiment_name' => 'getSentimentName',
+        'label_id' => 'getLabelId'
     ];
 
     /**
@@ -176,7 +186,9 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['label_text'] = isset($data['label_text']) ? $data['label_text'] : null;
+        $this->container['sentiment_name'] = isset($data['sentiment_name']) ? $data['sentiment_name'] : null;
+        $this->container['label_id'] = isset($data['label_id']) ? $data['label_id'] : null;
     }
 
     /**
@@ -204,25 +216,73 @@ class CompletionsResponseResSet implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets results
+     * Gets label_text
      *
-     * @return \Swagger\Client\Model\CompletionsResultWrapper[]
+     * @return string
      */
-    public function getResults()
+    public function getLabelText()
     {
-        return $this->container['results'];
+        return $this->container['label_text'];
     }
 
     /**
-     * Sets results
+     * Sets label_text
      *
-     * @param \Swagger\Client\Model\CompletionsResultWrapper[] $results results
+     * @param string $label_text The label that appears in the UI for a user to give feedback.
      *
      * @return $this
      */
-    public function setResults($results)
+    public function setLabelText($label_text)
     {
-        $this->container['results'] = $results;
+        $this->container['label_text'] = $label_text;
+
+        return $this;
+    }
+
+    /**
+     * Gets sentiment_name
+     *
+     * @return string
+     */
+    public function getSentimentName()
+    {
+        return $this->container['sentiment_name'];
+    }
+
+    /**
+     * Sets sentiment_name
+     *
+     * @param string $sentiment_name The associated Positive, Negative, or Neutral sentiment of the label.
+     *
+     * @return $this
+     */
+    public function setSentimentName($sentiment_name)
+    {
+        $this->container['sentiment_name'] = $sentiment_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets label_id
+     *
+     * @return int
+     */
+    public function getLabelId()
+    {
+        return $this->container['label_id'];
+    }
+
+    /**
+     * Sets label_id
+     *
+     * @param int $label_id The id of the feedback label in the FeedbackLabel database table.
+     *
+     * @return $this
+     */
+    public function setLabelId($label_id)
+    {
+        $this->container['label_id'] = $label_id;
 
         return $this;
     }
