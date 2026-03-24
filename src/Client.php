@@ -225,7 +225,7 @@ class Client {
     $wrappedRecommendations = $resultSet->getRecommendations() ?: [];
     $curatedResults         = $resultSet->getCuratedResults() ?: [];
     $aiResult               = $resultSet->getAiResult() ? : [];
-    $queryLogId             = $resultSet->getQueryLogId() ? : [];
+    $queryLogId             = $resultSet->getQueryLogId() ? : 0;
     
     // NOTE: we are stripping out suggestions from the result data
 
