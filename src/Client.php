@@ -10,6 +10,7 @@
 namespace GearLab\Api;
 
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Exception\ConnectException;
 use Swagger\Client\Api;
 use Swagger\Client\ApiException;
 use Swagger\Client\Model;
@@ -205,10 +206,7 @@ class Client {
       return [];
     }
 
-    $response = call_user_func_array(
-      [$this->getService('search'), 'search'],
-      $this->getSearchParams($opts)
-    );
+    $response = $this->callService('search', 'search', $this->getSearchParams($opts));
 
     if (empty($response)) {
       throw new ApiException('Empty or invalid response from search endpoint');
@@ -270,10 +268,7 @@ class Client {
   }
 
   public function completions(array $opts) : array {
-    $response = call_user_func_array(
-      [$this->getService('completions'), 'completions'],
-      $this->getCompletionsParams($opts)
-    );
+    $response = $this->callService('completions', 'completions', $this->getCompletionsParams($opts));
 
     // drill down into the cruft
     $resultSet = $response->getResSet() ?? null;
@@ -328,6 +323,18 @@ class Client {
       $this->collection,
       (string) ($opts['metaTag'] ?? ''),
     ];
+  }
+
+  /**
+   * Call an operation on a generated API service. A failed connection is raised
+   * as ApiException, the same as a failed request.
+   */
+  protected function callService(string $service, string $operation, array $params) {
+    try {
+      return call_user_func_array([$this->getService($service), $operation], $params);
+    } catch (ConnectException $e) {
+      throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode());
+    }
   }
 
   protected function getService(string $name) : object {
