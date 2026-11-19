@@ -9,7 +9,13 @@
 
 namespace GearLab\Api;
 
+use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\TestCase;
+use Swagger\Client\ApiException;
 
 /**
  * Tests for the GearLab\Api\Client class
@@ -112,5 +118,32 @@ class ClientTest extends TestCase {
     ]);
 
     $this->assertEquals('SO META', $params[3]);
+  }
+
+  public function testSearchRaisesApiExceptionWhenTheConnectionFails() {
+    $this->expectException(ApiException::class);
+    $this->clientWhoseConnectionFails()->search(['query' => 'spongebob squarepants']);
+  }
+
+  public function testCompletionsRaisesApiExceptionWhenTheConnectionFails() {
+    $this->expectException(ApiException::class);
+    $this->clientWhoseConnectionFails()->completions(['prefix' => 'sponge']);
+  }
+
+  /**
+   * A Client whose every request fails to connect, as a timeout or an
+   * unreachable host does.
+   */
+  protected function clientWhoseConnectionFails() : Client {
+    $handler = new MockHandler([
+      new ConnectException('Connection timed out', new Request('GET', '/')),
+    ]);
+
+    return new Client([
+      'key'          => 'qwerty',
+      'baseUri'      => 'https://fake.sitecrafting.net',
+      'collection'   => 1234,
+      'guzzleClient' => new GuzzleClient(['handler' => HandlerStack::create($handler)]),
+    ]);
   }
 }
